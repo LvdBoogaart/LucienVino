@@ -31,19 +31,23 @@
 </head>
 <body>
 	<div id="landing-page">
-		<p id="intro-text">what happens here?</p>
-        <p id="2nd-line"></p>
+		<p id="intro-text"></p>
+        <p id="second-line"></p>
 	</div>
 
     <script>
         var introText = document.getElementById('intro-text');
         var textToType = "Hi, I'm Luc. Welcome to my portfolio.";
         var index = 0;
+
+        var intervalId = setInterval(typeText, 50);
+        var secondLine = document.getElementById('second-line');
+        var secondTextToType = "I'm a web developer.";
         
         function typeText() {
     if (index === 2) {
         introText.innerHTML += " ";
-    } else if (index === 5) {
+    } else if (index === 12) {
         introText.innerHTML += "<br>";
     }
     introText.innerHTML += textToType.charAt(index);
@@ -51,14 +55,11 @@
     if (index > textToType.length - 1) {
         clearInterval(intervalId);
     }
-}
+    }       
         
-        var intervalId = setInterval(typeText, 50);
+       
 
-        var secondLine = document.getElementById('second-line');
-var secondTextToType = "I'm a web developer.";
-
-function typeSecondLine() {
+        function typeSecondLine() {
     secondLine.innerHTML += secondTextToType.charAt(index2);
     index2++;
     if (index2 > secondTextToType.length - 1) {
