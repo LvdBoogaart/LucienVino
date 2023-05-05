@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>Lucien Vino's search for a new vintage</title>
-   </head>
-   <body>
-      <h1>Welcome to my website! ⭐️</h1>
-      <p>How was your day? 🎉</p>
-   </body>
+<head>
+	<title>Luc's Portfolio</title>
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		#landing-page {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background-color: #333;
+			color: #fff;
+			font-family: sans-serif;
+			font-size: 24px;
+		}
+	</style>
+</head>
+<body>
+	<div id="landing-page">
+		<p id="intro-text"></p>
+	</div>
+
+    <script>
+        var introText = document.getElementById('intro-text');
+        var textToType = "Hi, I'm Luc. Welcome to my portfolio.";
+        var index = 0;
+        
+        function typeText() {
+            introText.innerHTML += textToType.charAt(index);
+            index++;
+            if (index > textToType.length - 1) {
+                clearInterval(intervalId);
+            }
+        }
+        
+        var intervalId = setInterval(typeText, 50);
+    </script>
+    
+</body>
 </html>
