@@ -19,11 +19,20 @@
 			font-family: sans-serif;
 			font-size: 24px;
 		}
+        #intro-text span {
+    color: red;
+    font-weight: bold;
+        }
+
+#intro-text span:nth-child(3) {
+    color: blue;
+}
 	</style>
 </head>
 <body>
 	<div id="landing-page">
 		<p id="intro-text"></p>
+        <p id="2nd-line"></p>
 	</div>
 
     <script>
@@ -32,14 +41,33 @@
         var index = 0;
         
         function typeText() {
-            introText.innerHTML += textToType.charAt(index);
-            index++;
-            if (index > textToType.length - 1) {
-                clearInterval(intervalId);
-            }
-        }
+    if (index === 2) {
+        introText.innerHTML += " ";
+    } else if (index === 5) {
+        introText.innerHTML += "<br>";
+    }
+    introText.innerHTML += textToType.charAt(index);
+    index++;
+    if (index > textToType.length - 1) {
+        clearInterval(intervalId);
+    }
+}
         
         var intervalId = setInterval(typeText, 50);
+
+        var secondLine = document.getElementById('second-line');
+var secondTextToType = "I'm a web developer.";
+
+function typeSecondLine() {
+    secondLine.innerHTML += secondTextToType.charAt(index2);
+    index2++;
+    if (index2 > secondTextToType.length - 1) {
+        clearInterval(intervalId2);
+    }
+}
+
+var intervalId2 = setInterval(typeSecondLine, 50);
+
     </script>
     
 </body>
