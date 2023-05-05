@@ -14,10 +14,10 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			background-color: #333;
-			color: #fff;
-			font-family: sans-serif;
-			font-size: 24px;
+			background-color: #1e1f25;
+			color: #fff4be;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 40px;
 		}
         #intro-text span {
     color: red;
@@ -37,7 +37,7 @@
 
     <script>
         var introText = document.getElementById('intro-text');
-        var textToType = "Hi, I'm Luc. Welcome to my portfolio.";
+        var textToType = "You don't always need an excuse to drink a glass of wine.";
         var index = 0;
 
         var intervalId = setInterval(typeText, 50);
@@ -46,8 +46,8 @@
         
         function typeText() {
     if (index === 2) {
-        introText.innerHTML += " ";
-    } else if (index === 12) {
+        introText.innerHTML += "";
+    } else if (index === 40) {
         introText.innerHTML += "<br>";
     }
     introText.innerHTML += textToType.charAt(index);
