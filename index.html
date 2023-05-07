@@ -1,73 +1,109 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Luc's Portfolio</title>
-	<style>
-		html, body {
-			height: 100%;
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Luc van den Boogaart</title>
+
+    <!-- Bootstrap -->
+    <link href="../../../Pictures/css/bootstrap-4.4.1.css" rel="stylesheet">
+    <style type="text/css">
+    @import url("css/main.css");
+	html, body {height: 100%;
 			margin: 0;
-			padding: 0;
-		}
-		#landing-page {
-			height: 100%;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			background-color: #1e1f25;
-			color: #fff4be;
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 40px;
-		}
-        #intro-text span {
-    color: red;
-    font-weight: bold;
-        }
+			padding: 0;}	
 
-#intro-text span:nth-child(3) {
-    color: blue;
-}
-	</style>
-</head>
+		
+    </style>
+  </head>
 <body>
-	<div id="landing-page">
-		<p id="intro-text"></p>
-        <p id="second-line"></p>
+<div class="container-fluid" id="landing-page">
+  <div class="col-lg-12">
+	  <div class="row" style="margin-top:100px">
+	  	
+	  </div>
+    <div class="row">
+      <div class="col- flex-margin">
+		  <tt id="intro-text" style=></tt>
+ 	  </div>
+    </div>
+	
+	  <div class="row" style="margin-top: 20px">
+		  <div class="col- flex-margin">
+		  <tt id="second-line"></tt>
+		  </div>
+	  </div>
 	</div>
-
-    <script>
+	
+    
+</div>
+    
+	
+<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+	   <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+	     <ul class="navbar-nav mr-auto">
+	       <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li>
+	       <li class="nav-item"> <a class="nav-link" href="#">Blog</a> </li>
+		   <li class="nav-item"> <a class="nav-link" href="#">Vinologio</a> </li>
+<li class="nav-item"> <a class="nav-link" href="#">About me</a> </li>
+	       <!--li class="nav-item dropup"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </a>
+	         <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
+	           <div class="dropdown-divider"></div>
+	           <a class="dropdown-item" href="#">Something else here</a> </div>
+           </li-->
+	       <!--li class="nav-item"> <a class="nav-link disabled" href="#">Disabled</a> </li>
+         </ul-->
+	     <!--form class="form-inline my-2 my-lg-0">
+	       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+	       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         </form-->
+      </div>
+</nav>
+	
+	
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap-4.4.1.js"></script>
+<script>
         var introText = document.getElementById('intro-text');
         var textToType = "You don't always need an excuse to drink a glass of wine.";
         var index = 0;
-
-        var intervalId = setInterval(typeText, 50);
-        var secondLine = document.getElementById('second-line');
-        var secondTextToType = "I'm a web developer.";
+		var intervalId = setInterval(typeText, 70);
+		
+        
         
         function typeText() {
-    if (index === 2) {
-        introText.innerHTML += "";
-    } else if (index === 40) {
-        introText.innerHTML += "<br>";
-    }
-    introText.innerHTML += textToType.charAt(index);
-    index++;
-    if (index > textToType.length - 1) {
-        clearInterval(intervalId);
-    }
-    }       
+			if (index === 40) {
+        	introText.innerHTML += "<br>";
+			}
+    		introText.innerHTML += textToType.charAt(index);
+    		index++;
+			
+    		if (index > textToType.length - 1) {
+        	clearInterval(intervalId);
+			startSecondText()
+    		}
+    	}       
         
-       
+       function startSecondText() {
+		   var index2 = 0;
+		   var intervalId2 = setInterval(typeSecondLine, 70);
+		   var secondLine = document.getElementById('second-line');
+		   var secondTextToType = "Welcome to my search for a new vintage";	
 
-        function typeSecondLine() {
-    secondLine.innerHTML += secondTextToType.charAt(index2);
-    index2++;
-    if (index2 > secondTextToType.length - 1) {
-        clearInterval(intervalId2);
-    }
-}
+    	function typeSecondLine() {
+    		secondLine.innerHTML += secondTextToType.charAt(index2);
+    		index2++;
+    		
+			if (index2 > secondTextToType.length - 1) {
+        	clearInterval(intervalId2);
+    	}
+		}
+	}
 
-var intervalId2 = setInterval(typeSecondLine, 50);
+
 
     </script>
     

@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+.h5-resumedate {
+    font-size: medium;
+    text-align: right;
+}
+.left-border {
+    border-left: thin solid #DDDDDD;
+}
